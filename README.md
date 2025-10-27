@@ -24,3 +24,11 @@ steps needed to accomplish this. (this will serve as a grand master plan)
 dependencies for this project:
 node.js 24.9.0
 discord.js
+
+development tools:
+ngrok
+eslint (make sure to run npm i eslint in your directory)
+
+
+NOTE: in order to include the env file, the program must be run like this:
+node --env-file=.env index.js
