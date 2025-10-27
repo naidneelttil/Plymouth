@@ -9,14 +9,18 @@ release 1 will implement this feature:
   - have comprehsive documentation for new devs
     including intro to discord bot 
   - Docker containerization of the app
-  - hosting in aws in perpatuatiy, find the most cost effective way to do this 
+  - hosting in aws(?) in perpatuatiy, find the most cost effective way to do this 
   - testing files 
 
 
 steps needed to accomplish this. (this will serve as a grand master plan)
 
  - Read JavaScript: the Definiative Guide 
- - Complete the building your first discord app tutorial  
+ - Complete the discordjs.guide 
  - add and remove roles from users functionality  
  - find a way to perptually host the bot (consider aws)
 
+
+dependencies for this project:
+node.js 24.9.0
+discord.js
