@@ -19,12 +19,27 @@ async def hello(ctx: discord.ApplicationContext):
     await ctx.respond("Hey!")
 
 @bot.command()
-async def role(ctx, *, message):
-    await ctx.send("you hit a role command, yippie! **{}**".format(message))
+async def role(ctx, *, message:str):
+    messageArray = message.split(' ')
+
+    #do you have the correct perms scrub??? 
+    rolesOfAuthor = ctx.author.role
+    perms = False 
+    for x in rolesOfAuthor:
+        perms = x.name == "dreamer"
+    
+    if (not perms) :
+        await ctx.send("you don't have perms for that, scrub")
+    elif (len(messageArray) != 2): 
+        await ctx.send("Error, command format: ?role <@username> <role to be added>") 
+    else:
+        await ctx.send("you hit a role command, yippie! **{}** hell yea".format(message))
 
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("Unknown command.")
+
+
 
 bot.run(os.getenv('TOKEN')) # run the bot with the token
